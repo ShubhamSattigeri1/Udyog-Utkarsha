@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { t } from '../utils/translations';
 import { verifyCertificate } from '../services/database';

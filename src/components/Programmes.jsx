@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { t } from '../utils/translations';
 
 export default function Programmes() {
   const { language } = useLanguage();

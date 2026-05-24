@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { t } from '../utils/translations';
 import { useForm } from '../hooks';
-import { validateForm, validateEmail } from '../utils/validators';
+import { validateEmail } from '../utils/validators';
 
 export default function DonationForm() {
   const { language } = useLanguage();

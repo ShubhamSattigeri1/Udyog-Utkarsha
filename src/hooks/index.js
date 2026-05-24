@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 // Custom hook for form handling
 export const useForm = (initialValues, onSubmit) => {
@@ -70,8 +70,7 @@ export const useAsync = (asyncFunction, immediate = true) => {
     }
   }, [asyncFunction]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  React.useEffect(() => {
+  useEffect(() => {
     if (immediate) {
       execute();
     }

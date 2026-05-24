@@ -6,7 +6,6 @@ import { validateForm } from '../utils/validators';
 
 export default function JoinTeamForm() {
   const { language } = useLanguage();
-  const [successMessage, setSuccessMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (values, setErrors) => {

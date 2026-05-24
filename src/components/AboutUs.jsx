@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { t } from '../utils/translations';
 
 export default function AboutUs() {
   const { language } = useLanguage();
