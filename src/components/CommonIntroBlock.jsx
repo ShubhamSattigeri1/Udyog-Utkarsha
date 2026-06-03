@@ -4,10 +4,12 @@ export default function CommonIntroBlock() {
   return (
     <section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-12 border-b-2 border-blue-200">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
           Skill Development & Self Employment Training Institute
         </h2>
-        
+        <p className="text-gray-700 mb-6 max-w-3xl">
+          Our motto: उद्योगाचा सर्वांगीण विकास हाच आमचा ध्यास. Holistic industrial development is our ultimate obsession.
+        </p>
         <div className="text-gray-700 space-y-4 text-justify">
           <p>
             Under Udyog Utkarsh Samajik Sanstha, we have established the Skill Development & Self Employment 

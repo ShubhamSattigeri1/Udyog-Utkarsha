@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CommonIntroBlock from '../components/CommonIntroBlock';
 
 export default function AboutUsPage() {
+  const [photoError, setPhotoError] = useState(false);
   const boardMembers = [
     { sno: 1, name: 'Mr. Abhishek Ghagre', designation: 'Founder President' },
     { sno: 2, name: 'Mr. Sachin Pol', designation: 'Vice President' },
@@ -173,13 +174,21 @@ export default function AboutUsPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-blue-900 mb-8">From the Founder President's Desk</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Photo Placeholder */}
+            {/* Founder President Photo */}
             <div className="flex justify-center">
-              <div className="w-64 h-80 bg-gray-300 rounded-lg flex items-center justify-center shadow-lg">
-                <div className="text-center text-gray-600">
-                  <p className="text-sm">Photo Placeholder</p>
-                  <p className="text-xs">Mr. Abhishek Ghagre</p>
-                </div>
+              <div className="w-64 h-80 overflow-hidden rounded-lg bg-gray-100 shadow-lg">
+                {!photoError ? (
+                  <img
+                    src="/founder-president.jpg"
+                    alt="Founder President Mr. Abhishek Ghagre"
+                    className="h-full w-full object-cover"
+                    onError={() => setPhotoError(true)}
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-gray-200 text-center p-4 text-sm text-gray-700">
+                    Founder President image not available.
+                  </div>
+                )}
               </div>
             </div>
 
@@ -349,15 +358,73 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Honors & Recognitions */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-blue-900 mb-6">Honors, State-Level Awards & Recognitions</h2>
+          <div className="grid gap-6">
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 shadow-sm">
+              <p className="text-gray-700 mb-4">
+                Our organization and founder have been honored repeatedly for outstanding contributions in community development, skill training, entrepreneurship, women empowerment, and rural livelihood growth.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2021</p>
+                  <p className="text-gray-700">Rajyastariya Samajbhushan Puraskar — Maharashtra Patrakar Sangh</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2022</p>
+                  <p className="text-gray-700">Satara Bhushan Puraskar — Global Scholars Foundation, Pune</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2023</p>
+                  <p className="text-gray-700">Rajyastariya Maharashtra Samaj Bhushan Puraskar — Rajeshwari Education Sanstha, Pune</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2023</p>
+                  <p className="text-gray-700">Rajyastariya Aashirvad Sevavrati Puraskar — Aashirvad Bahuuddeshiya Sevabhavi Sanstha, Sangli</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2023</p>
+                  <p className="text-gray-700">Rajyastariya Vidyaniketan Samaj Ratna Puraskar — Vidyaniketan Shaikshanik Sanstha, Kochalewadi</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2023</p>
+                  <p className="text-gray-700">Rajyastariya Samaj Bhushan Puraskar — Savitribai Bahuuddeshiya Mahila Vikas Sanstha</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2024</p>
+                  <p className="text-gray-700">Rajyastariya Samaj Ratna Puraskar — Maitriya Seva Pratishthan</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2024</p>
+                  <p className="text-gray-700">Rajyastariya Adarsh Samajik Puraskar — Garud Foundation Maharashtra State & VBSS</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 bg-white p-4">
+                  <p className="font-semibold text-blue-900">2024</p>
+                  <p className="text-gray-700">Lokshahir Dr. Annabhau Sathe Samajbhushan Puraskar — Aashirvad Sevabhavi Sanstha</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 shadow-sm">
+              <h3 className="text-2xl font-bold text-blue-900 mb-3">The Annual Utkarsh Awards</h3>
+              <p className="text-gray-700">
+                Marking its 5th Founders Day Anniversary, the organization instituted the Utkarsh Awards to recognize grass-roots changemakers, agriculture practitioners, rural entrepreneurs, and social innovators across Maharashtra.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Message to Society */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl font-bold text-blue-900 mb-6">Our Message to the Society</h2>
           <p className="text-gray-700 text-justify leading-relaxed">
-            We strongly believe that education alone is not enough in today's competitive world. Along with academic knowledge 
-            the students need Communication Abilities, Confidence, Professional Skills & Entrepreneurial Thinking to Succeed 
-            in Life. Our mission is to ensure that every young individual gets access to the right Opportunities, Guidance & 
-            Practical Knowledge needed for Personal & Professional Growth.
+            We strongly believe that education alone is not enough in today's competitive world. Along with academic knowledge, students need communication abilities, confidence, professional skills and an entrepreneurial mindset to succeed in life. Our mission is to ensure that every young individual gets access to the right opportunities, guidance and practical knowledge for personal and professional growth.
+          </p>
+          <p className="text-gray-700 text-justify leading-relaxed mt-4">
+            Technical knowledge alone does not guarantee business success. Today’s entrepreneurs must also master business planning, marketing, sales, etiquette and modern workplace readiness to build a sustainable enterprise.
           </p>
         </div>
       </section>
